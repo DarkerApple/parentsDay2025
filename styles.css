@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Do Hyeon', sans-serif;
+    background: #fff8f0;
+    color: #333;
+    text-align: center;
+  }
+  header {
+    background: #f76c6c;
+    color: white;
+    padding: 2rem 1rem;
+  }
+  header h1 {
+    font-family: 'Jua', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+  }
+  .content {
+    padding: 2rem;
+  }
+  .content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem auto;
+    font-family: "Gowun Dodum", sans-serif;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .gallery img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  footer {
+    margin-top: 3rem;
+    padding: 1rem;
+    background: #f1f1f1;
+    font-size: 0.9rem;
+  }
