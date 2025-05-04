@@ -6,6 +6,7 @@ body {
     text-align: center;
   }
   header {
+    width: 100%;
     background: #f76c6c;
     color: white;
     padding: 2rem 1rem;
@@ -32,7 +33,7 @@ body {
     margin-top: 2rem;
   }
   .gallery img {
-    width: 200px;
+    width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
@@ -41,4 +42,182 @@ body {
     padding: 1rem;
     background: #f1f1f1;
     font-size: 0.9rem;
+  }
+
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    z-index: 100;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -50%;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: -50%;
+  }
+  
+  @keyframes floatHeart {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(45deg);
+    }
+    25% {
+      opacity: 0.9;
+      transform: translateY(-50px) translateX(10px) rotate(45deg);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(-100px) translateX(-10px) rotate(50deg) scale(1.1);
+    }
+    75% {
+      opacity: 0.5;
+      transform: translateY(-150px) translateX(5px) rotate(40deg) scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px) translateX(-5px) rotate(45deg) scale(1.5);
+    }
+  }
+  
+  /* Improved button styling */
+  #animation {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f76c6c, #ff9d9d);
+    color: white;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 150px;
+  }
+  
+  #animation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  #animation:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .sparkle {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px gold, 0 0 20px 4px rgba(255, 215, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Heart in images */
+  .image-heart {
+    position: absolute;
+    transform: rotate(45deg);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 5;
+  }
+  
+  .image-heart::before,
+  .image-heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 50%;
+  }
+  
+  .image-heart::before {
+    top: -50%;
+    left: 0;
+  }
+  
+  .image-heart::after {
+    top: 0;
+    left: -50%;
+  }
+  
+  /* Gallery image container adjustments */
+  .gallery {
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: auto;
+    height: auto;
+  }
+  
+  .gallery img {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Sparkle animation */
+  @keyframes sparkleAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(0deg);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1) rotate(45deg);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1) rotate(45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5) rotate(90deg);
+    }
+  }
+  
+  /* Image heart animation */
+  @keyframes imageHeartAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(45deg) translateY(0);
+    }
+    10% {
+      opacity: 0.8;
+      transform: scale(1) rotate(45deg) translateY(0);
+    }
+    60% {
+      opacity: 0.5;
+      transform: scale(1.2) rotate(45deg) translateY(-20px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5) rotate(45deg) translateY(-50px);
+    }
   }
